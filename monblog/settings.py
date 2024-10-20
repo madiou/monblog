@@ -2,13 +2,8 @@ from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 DEBUG = True
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -18,7 +13,12 @@ SECRET_KEY = "django-insecure-8srlyjet%*140m@765_uu*8g0q9d)^#$-g7rckizv2ga&vul2f
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # monblog/settings.py
 INSTALLED_APPS = [
@@ -49,9 +49,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.example.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'mahdiou.diallo@gmail.com'
-EMAIL_HOST_PASSWORD = 'BlIbr@him@1982B'
-DEFAULT_FROM_EMAIL = 'webmaster@ton_domaine.com'
+EMAIL_HOST_USER = 'mahdiou.diallo@localhost'
+EMAIL_HOST_PASSWORD = 'Mouminia25'
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "allauth.account.middleware.AccountMiddleware",
@@ -61,8 +61,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "django.allauth.account.middleware",
-    
 ]
 
 ROOT_URLCONF = "monblog.urls"
@@ -83,8 +81,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "wsgi.application"
-#WSGI_APPLICATION = "monblog.wsgi.application"
+WSGI_APPLICATION = "monblog.wsgi.application"
 
 
 # Database

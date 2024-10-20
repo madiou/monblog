@@ -13,7 +13,7 @@ services:
       - key: DEBUG
         value: 'False'
       - key: ALLOWED_HOSTS
-        value: 'ton_nom_de_domaine.com'
+        value: 'monblog.onrender.com'
       - key: DATABASE_URL
         fromDatabase:
           name: ton_nom_bdd
@@ -28,7 +28,7 @@ services:
       - key: EMAIL_HOST_PASSWORD
         value: 'BlIbr@him@1982B'
       - key: DEFAULT_FROM_EMAIL
-        value: 'webmaster@ton_domaine.com'
+        value: 'webmaster@monblog.onrender.com'
       - key: SITE_ID
         value: '1'
       - key: STATIC_URL
