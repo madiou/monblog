@@ -5,9 +5,11 @@ services:
     region: oregon
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn monblog.wsgi:application
+    startCommand: gunicorn monblog.wsgi:application --bind 0.0.0.0:$PORT"
     autoDeploy: true
     envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: monblog.settings
       - key: SECRET_KEY
         value: 'django-insecure-8srlyjet%*140m@765_uu*8g0q9d)^#$-g7rckizv2ga&vul2f'
       - key: DEBUG

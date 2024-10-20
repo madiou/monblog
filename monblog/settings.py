@@ -31,7 +31,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',  # Assure-toi que 'django.contrib.sites' est inclus
     'blog',
     'allauth',
-    'django-allauth',  
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
@@ -56,14 +55,12 @@ EMAIL_HOST_PASSWORD = 'Mouminia25'
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "allauth.account.middleware.AccountMiddleware",
-    'allauth.account.middleware.AuthenticationMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    
 ]
 
 ROOT_URLCONF = "monblog.urls"
@@ -79,8 +76,6 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                'allauth.account.context_processors.account',
-                'allauth.socialaccount.context_processors.socialaccount'
             ],
         },
     },
