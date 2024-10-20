@@ -1,7 +1,7 @@
 # blog/views.py
 from django.core.paginator import Paginator  # Ajoute cette ligne
 from django.shortcuts import render, get_object_or_404
-from .models import Post, Comment
+from .models import Post, Comment, Category
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
