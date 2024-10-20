@@ -31,11 +31,11 @@ INSTALLED_APPS = [
     'django.contrib.sites',  # Assure-toi que 'django.contrib.sites' est inclus
     'blog',
     'allauth',
+    'django-allauth',  
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
-    'allauth.socialaccount',  
 ]
 
 AUTHENTICATION_BACKENDS = (
@@ -56,6 +56,7 @@ EMAIL_HOST_PASSWORD = 'Mouminia25'
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "allauth.account.middleware.AccountMiddleware",
+    'allauth.account.middleware.AuthenticationMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
