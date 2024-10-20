@@ -1,13 +1,10 @@
 # blog/views.py
-# blog/views.py
+from django.core.paginator import Paginator  # Ajoute cette ligne
 from django.shortcuts import render, get_object_or_404
 from .models import Post, Comment
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from django.core.mail import send_mail
-from django.conf import settings
-
 
 def home(request):
     query = request.GET.get('q')
@@ -15,7 +12,7 @@ def home(request):
         posts = Post.objects.filter(title__icontains=query)
     else:
         posts = Post.objects.all()
-    paginator = Paginator(posts, 5)
+    paginator = Paginator(posts, 5)  # 5 articles par page
     page_number = request.GET.get('page')
     posts = paginator.get_page(page_number)
     categories = Category.objects.all()
