@@ -47,9 +47,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.example.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'mahdiou.diallo@localhost'
-EMAIL_HOST_PASSWORD = 'Mouminia25'
-
+EMAIL_HOST_USER = 'mahdiou.diallo@gmail.com'
+EMAIL_HOST_PASSWORD = 'BlIbr@him@1982B'
+DEFAULT_FROM_EMAIL = 'webmaster@ton_domaine.com'
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "allauth.account.middleware.AccountMiddleware",
@@ -59,6 +59,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django.allauth.account.middleware",
+    
 ]
 
 ROOT_URLCONF = "monblog.urls"
